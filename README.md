@@ -1,10 +1,10 @@
 # Security on mobile cloud computing using cipher text policy and attribute based encryption scheme
 ## scenario.
-- When user want to store their data and can know who will see their data and give permission to some people to access their data.
+- User want to store data in cloud but dont want their data can seen by everyone. So user want to know who will see their data and give permission to some people to access their data.
+
+- When data owner want to upload data, they will encrypt it using public key. Subsequently, a policy, which decides the conditions of those having the privilege to grant access to the database will be created. So the data will be stored in database include the public key, the policy and the ciphertext is encrypted using public key. The dataowner will have privilege to access and decrypt data using private key. Whoever have policy match policy of ciphertext will decrypt and see data.
 - model:
-
-
-
+![model_system](https://github.com/superKool/CP-ABE/blob/main/mobile_cloud.pdf)
 
 
 Subject  | Description  
