@@ -2,7 +2,7 @@
 ## Scenario.
 - Data owner want to store data in cloud but dont want their data can seen by everyone. So user want to know who will see their data and give permission to some people to access their data.
 ## Detail the process of allocating keys in the context of data storage for sales websites using symmetric cryptography according to CP-ABE mechanism
-- In the context of storing data for an e-commerce website using the CP-ABE symmetric encryption scheme, the key allocation process is carried out as follows:
+- In the context of storing data for an company using the CP-ABE symmetric encryption scheme, the key allocation process is carried out as follows:
 
  + Access policy determination: Before issuing keys, the access policy needs to be determined, which means deciding which users are allowed to access the data encrypted with this key. The access policy is given in the form of a logical description of user attributes and/or data attributes.
 
@@ -23,8 +23,8 @@
 
 Subject  | Description  
 --- | ---
-Protected Assets  | Data include username,password, personal data of user like bank account, indentity card,....
-Related-Party | Cloud service,sales website,user(data owner).
+Protected Assets  | Data of company like contract,private information of employees.
+Related-Party | Cloud service,company,user(data owner).
 Security Goal | Prevent attacker to stole data and prevent people have privilege to access sensitive data.
 
 
