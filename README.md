@@ -23,8 +23,8 @@
 
 Subject  | Description  
 --- | ---
-Protected Assets  | data of user
-Related-Party | Cloud service
+Protected Assets  | Data include username,password, personal data of user like bank account, indentity card,....
+Related-Party | Cloud service,sales website,user(data owner).
 Security Goal | Prevent attacker to stole data and prevent people have privilege to access sensitive data.
 
 
