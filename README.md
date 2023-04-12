@@ -1,36 +1,24 @@
 # Security cloud computing using cipher text policy and attribute based encryption scheme
-## Scenario.
-- Data owner want to store data in cloud but dont want their data can seen by everyone. So user want to know who will see their data and give permission to some people to access their data.
-## Detail the process of allocating keys in the context of data storage for sales websites using symmetric cryptography according to CP-ABE mechanism
-- In the context of storing data for an company using the CP-ABE symmetric encryption scheme, the key allocation process is carried out as follows:
-
- + Access policy determination: Before issuing keys, the access policy needs to be determined, which means deciding which users are allowed to access the data encrypted with this key. The access policy is given in the form of a logical description of user attributes and/or data attributes.
-
- + Private key creation: After determining the access policy, the system will create a private key for each user based on their attributes and the access policy. This private key creation process will use symmetric encryption algorithms, such as AES, to generate a unique secret key based on the user's attributes.
-
- + Public key creation: After having private keys for each user, the system will create corresponding public keys to encrypt the data. The public key is generated based on the data attributes and the access policy.
-
- + Data encryption: After having a public key, the system will use it to encrypt the data before storing it on the system. This encryption process will use symmetric encryption algorithms, such as AES, to encrypt the data using the corresponding public key.
-
- + Private and public key storage: Finally, the system will store both private and public keys on the system. Private keys will be stored privately for each user, while public keys will be stored publicly to allow other users to encrypt data.
-
--model:
-![model_system](https://github.com/superKool/CP-ABE/blob/main/systemModel.png)
-
-- When data owner want to upload data, they will encrypt it using public key. Subsequently, a ciphertext policy, which decides the conditions of those having the privilege to grant access to the database will be created. So the data will be stored in database include the public key, the ciphertext policy and the ciphertext is encrypted using public key. The dataowner will have privilege to access and decrypt data using private key. Whoever have ciphertext policy match policy of ciphertext will decrypt and see data.
-- Key will be generated from user include private key and private key, public key will be used to encrypt data and send to server, private key will be store at users to decrypt data, even administrator of cloud cannot read content of data of data owner because they do not have private or have ciphertext policy to decrypt data.
 
 
-Subject  | Description  
---- | ---
-Protected Assets  | Data of company like contract,private information of employees.
-Related-Party | Cloud service,company,user(data owner).
-Security Goal | Prevent attacker to stole data and prevent people have privilege to access sensitive data.
+- Khóa được tạo ra  bởi multi authority bởi vì khóa bao gồm nhiều thuộc tính mà thuộc tính có thể thuộc nhiều địa điểm khác nhau.
+(ví dụ: trong trường hợp ở trường đại học sẽ tạo được một vài khóa, ở công ty sẽ tạo được vài khóa. các khóa đó kết hợp lại sẽ tạo ra được một khóa chủ gồm nhiều thuộc tính.)
+- Người sở hữu tài sản là người tạo ra dữ liệu và upload dữ liệu đó lên cloud, người sở hữu dữ liệu là những người có thể sử dụng dữ liệu đó ở trong công ty.
+- Đường truyền có thể bị attacker nghe lén sau đó sửa đổi lại dữ liệu gây ra thiệt hại.
+- Attacker có thể xâm nhập vào các bên liên quan rồi sau đó gửi những thông tin sai gây ra ảnh hưởng đến công ty mua bán hàng online.
+(ví dụ: attacker có thể giả dạng là người của hành chính công sau đó gửi email yêu cầu công ty mua bán hàng online phải đưa cho attacker toàn bộ dữ liệu).
+- Cơ chế bảo về có thể bao gồm việc khi nhận được thông tin từ một bên liên quan nào đó thì phải có cách để xác định đó có phải là từ nguồn chính thống hay là attacker giả dạng để phá hoại. 
+- Các bên liên quan: 
++ Các dịch vụ hành chính công: trong lĩnh vực bán hàng, việc cấp giấy phép buôn bán,khai báo giá trị tài sản, đóng thuế phải tuân thủ đúng theo thủ tục hành chính.
+(ví dụ: trong lĩnh vực bất động sản, việc xây dựng phải được nhà nước chấp thuận, các dịch vụ hành chính công có vai trò kiểm soát các hoạt động của các công ty bất động sản có đúng với quy định của pháp luật hay không.)
++ Các ngân hàng: các ngân hàng có vai trò kiểm soát nguồn tiền vay, thế chấp của các công ty bán hàng online.
++ Các dịch vụ truyền thông: Dịch vụ truyền thông có vai trò quảng cáo sản phẩm cũng như triển khai các sự kiện trên công ty.
++ Các dịch vụ vận chuyển: có vai trò vận chuyển hàng hóa đến người nhận.
++ Các dịch vụ bán lẻ như môi giới nhà đất.
++ Các dịch vụ du lịch.
++ Các công ty nguyên vật liệu.
 
 
-- Member:
 
-Name | ID | mail | presentation |  database  | agorithm | UI
---- | --- | ---  | --- | --- | --- | ---
-Nguyễn Đức Vương  | 21522809 | 21522809@gm.uit.edu.vn | v |  | v| |
-Nguyễn Thanh Tài  | 21521398  | 21521398@gm.uit.edu.vn |  | v | | v|
+
+- Bảo vệ key: trusted execution enviroment, secure enclave, sử dụng phần cứng để bảo vệ modun TPM.
